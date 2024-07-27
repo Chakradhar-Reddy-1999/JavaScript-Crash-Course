@@ -1,12 +1,12 @@
 // alert("Hellow World")
 
-/*Adding console Statements (or) loggs in in console
+// Adding console Statements (or) loggs in in console
 // console.log("hello world");
 // printing error in console
 // console.error("I am an error");
 // printing warning in console
 // console.warn("I am a warning");
-*/
+
 
 // Declaring Variables
 // var, let, const
@@ -195,7 +195,7 @@ console.log(sum(4, 15));
 */
 
 
-///////// Operators in JavaScript//////
+///////////////////// Operators in JavaScript//////
 
 //////// assignment op
 /* let x = 9;
@@ -293,5 +293,281 @@ console.log(++y);
 console.log(--y); 
 */
 
+
+
+///////////////// conditional statement//
+
+// if-else statement
+/*
+const x=91;
+const y=91;
+
+if (x > y){
+  console.log("x is bigger")
+}else if (x < y){
+  console.log("y is bigger")
+}else{
+  console.log(" y is equals to x");
+} */
+
+
+  // const doIHaveBreathingProblem = false;
+  // const haveILostSmell = true;
+  // const haveILostTaste = false; 
+
+// if all are true = Positive, else Negative 
+/*
+if(doIHaveBreathingProblem===true){
+  if(haveILostSmell===true){
+    if(haveILostTaste===true){
+      console.log("Positive");
+    }else{
+      console.log("Negative");
+    }
+  }else{
+    console.log("Negative");
+  }
+}else{
+  console.log("Negative");
+}
+
+// Above code is very big, so lets decrease it.
+// if all 3 are true > positive, else negative
+if(doIHaveBreathingProblem && haveILostSmell && haveILostTaste){
+  console.log("Positive");
+}else{
+  console.log("Negative");
+}
+
+// i am positive if
+// I have breathing problem
+// OR if i have lost smell and taste
+if(doIHaveBreathingProblem || (haveILostSmell && haveILostTaste)){
+  console.log("Positive");
+}else{
+  console.log("Negative");
+}*/
+
+
+/////////////////////// Ternary operator /////////////
+/*const x = 11;
+const y = 12;
+
+// nested ternary operator ->  condition ? exprIfTrue : exprIfFalse
+x==y? console.log("True") : console.log("False");
+x > y ? console.log("X is bigger") : x < y ? console.log("Y is bigger") : console.log("both are equal"); 
+*/
+
+
+
+////////////////////// switch case statement //////////////////////
+// const dayOfWeek=7;
+
+/*switch(dayOfWeek){
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+    case 3:
+      console.log("Wednesday");
+      break;
+      case 4:
+    console.log("Thursday");
+    break;
+    case 5:
+    console.log("Friday");
+    break;
+    case 6:
+    console.log("Saturday");
+    break;
+    case 7:
+    console.log("Sunday");
+    break;
+    default:
+      console.log("Invalid");
+    break;
+}
+
+switch(dayOfWeek){
+  case 1:
+    console.log("Workday");
+    break;
+  case 2:
+    console.log("Workday");
+    break;
+    case 3:
+      console.log("Workday");
+      break;
+      case 4:
+    console.log("Workday");
+    break;
+    case 5:
+    console.log("Workday");
+    break;
+    case 6:
+    console.log("Weekend Enjoy Pandagoo");
+    break;
+    case 7:
+    console.log("Weekend Enjoy Pandagoo");
+    break;
+    default:
+      console.log("Invalid");
+    break;
+}
+// Above code is big and not readable , so we can write more effencitly
+
+switch(dayOfWeek){
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log("Workday");
+    break;
+  case 6:
+  case 7:
+    console.log("Weekend Enjoy Pandagoo");
+    break;
+  default:
+    console.log("Invalid");
+    break;
+}
+// Now code is easy to read and compact */
+
+
+/////////////// Loops in JavaScript //////////
+/*for(let x=0; x<10; x++ ){
+  console.log(x);
+}*/
+
+/*  let x=0;
+while(x<10){
+  console.log(x);
+  x++;
+}   */
+
+/*  let x=0;
+do{
+  console.log(x);
+  x++;
+} while(x<10);    */
+
+// iterating over an array
+//  const student = ["John", "Harry", "Ron", "Aragorn", "Gimli"];
+/*for(let x=0; x<student.length; x++){
+  console.log(student[x]);
+}*/
+
+/* for(let x=0; x<student.length; x++){
+  if(x===1) continue;   // when x=1 loop will continue without excuting the next line i.e x value will increase to 2 
+  console.log(student[x]);
+  if(x===3) break;   // loop breaks at 3rd index array won't execute any further.
+} */
+
+///////////////////// for of loop - mainly used to iterate over arrays
+  // const students = ["John", "Harry", "Ron", "Aragorn", "Gimli"];
+/*  for(let student of students){
+    console.log(student);
+  } */
+
+/*    const students = [
+  {
+    name: "Chakri",
+    age: 24,
+    isPresent: true
+  },
+  {
+    name: "John",
+    age: 224,
+    isPresent: true
+  },
+  {
+    name: "Harry",
+    age: 214,
+    isPresent: false
+  },
+  {
+    name: "Ron",
+    age: 11,
+    isPresent: true
+  },
+  {
+    name: "Aragorn",
+    age: 114,
+    isPresent: true
+  },
+  {
+    name: "Gimli",
+    age: 44,
+    isPresent: false
+  }
+]
+// for of loop //
+for(let student of students){
+  console.log(student);
+  console.log(student.age);
+  console.log(student.name);
+}   */
+
+
+
+///// for in loop////////
+/*  const student = {
+  name: "Harry",
+  age: 21,
+  fees: undefined,
+  datesWhenAbsent: [5, 9],
+  address: {
+    street: "22nd  street",
+    pincode: "324445",
+    city: "xyz",
+  },
+}; */
+
+// for in loop- mainly used to iterate over an object
+/*  for (let prop in student) {
+  console.log(`${prop} : ${student[prop]}`);
+} */
+
+/////////// forEach function 
+/*  const students = [
+  {
+    name: "Chakri",
+    age: 24,
+    isPresent: true
+  },
+  {
+    name: "John",
+    age: 224,
+    isPresent: true
+  },
+  {
+    name: "Harry",
+    age: 214,
+    isPresent: false
+  },
+  {
+    name: "Ron",
+    age: 11,
+    isPresent: true
+  },
+  {
+    name: "Aragorn",
+    age: 114,
+    isPresent: true
+  },
+  {
+    name: "Gimli",
+    age: 44,
+    isPresent: false
+  }
+]
+// Here we are trying to do something for each element of this students array. And this forEach method accepts a callback function. So it will be like this. And this callback function has the array element as the first parameter. So the values in this array will be the first parameter of this callback function. So let's call it element or let's call it student.
+students.forEach(function (student) {
+  console.log(student.name);
+  // break;       // in 'forEach' method we can't use break as we use in other loops.
+});    */
 
 

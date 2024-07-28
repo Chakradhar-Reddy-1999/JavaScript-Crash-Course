@@ -361,9 +361,9 @@ x > y ? console.log("X is bigger") : x < y ? console.log("Y is bigger") : consol
 
 
 ////////////////////// switch case statement //////////////////////
-// const dayOfWeek=7;
+/*const dayOfWeek=01;
 
-/*switch(dayOfWeek){
+switch(dayOfWeek){
   case 1:
     console.log("Monday");
     break;
@@ -433,8 +433,8 @@ switch(dayOfWeek){
   default:
     console.log("Invalid");
     break;
-}
-// Now code is easy to read and compact */
+} */
+// Now code is easy to read and compact 
 
 
 /////////////// Loops in JavaScript //////////
@@ -532,7 +532,7 @@ for(let student of students){
 } */
 
 /////////// forEach function 
-/*  const students = [
+/*    const students = [
   {
     name: "Chakri",
     age: 24,
@@ -563,11 +563,143 @@ for(let student of students){
     age: 44,
     isPresent: false
   }
-]
+]   */
 // Here we are trying to do something for each element of this students array. And this forEach method accepts a callback function. So it will be like this. And this callback function has the array element as the first parameter. So the values in this array will be the first parameter of this callback function. So let's call it element or let's call it student.
-students.forEach(function (student) {
+/*students.forEach(function (student) {
   console.log(student.name);
   // break;       // in 'forEach' method we can't use break as we use in other loops.
 });    */
 
+// Map function 
+/*
+const newArr = students.map(function (student) { return student.age});
+console.log(newArr);
+
+
+// Filter function
+const newArr = students.filter((student)=>{ return student.isPresent === false}).map((student)=>student.name);
+console.log(newArr);
+*/
+
+
+// ES6 Spread Syntax -> ...  //
+/*    const class2020 = [
+  {
+    name: "John",
+    age: 23,
+    isPresent: true,
+  },
+  {
+    name: "Aragorn",
+    age: 56,
+    isPresent: true,
+  },
+  {
+    name: "Gimli",
+    age: 34,
+    isPresent: false,
+  },
+  {
+    name: "Harry",
+    age: 16,
+    isPresent: true,
+  },
+  {
+    name: "Ron",
+    age: 17,
+    isPresent: false,
+  },
+];
+
+const class2021 = [
+  {
+    name: "Legolas",
+    age: 32,
+    isPresent: false,
+  },
+];    */
+/* // combining 2 arrays
+const totalStudents = [...class2020, ...class2021];
+console.log(totalStudents);
+
+// destructing
+const [j, a, g] = totalStudents
+console.log(j);
+console.log(a);
+console.log(g);   */
+
+/*const stu1 = {
+  name: "John",
+  age: 23,
+};
+
+const stu2 = {
+  isPresent: false,
+}; 
+
+// combining 2 object
+   const student = { ...stu1, ...stu2, age: 30 };
+console.log(student); 
+
+// destructing
+const { name, isPresent, fsdjbjd } = student;
+console.log(name);
+console.log(isPresent);
+console.log(fsdjbjd);   */
+
+
+// JSON Object  //
+/*
+ const student = {
+  "age": 23,
+  "name": "John",
+};
+
+console.log(student);
+console.log(JSON.stringify(student));
+console.log(typeof student);
+const studentString = '{"age":23, "name":"Johnnnnnn"}';
+// const studentString = student;
+console.log(studentString);
+console.log(typeof studentString);
+const stuJson = JSON.parse(studentString);
+console.log(typeof stuJson);
+console.log(stuJson);
+// We have changed an JSON object to string then back to Object
+*/
+
+
+
+
+
+
+/* const name = new String("John");
+console.log(name); */
+
+////////////     OOPS in JS     ////
+
+// constructor () function
+
+function Student(studentName, studentDob, studentSection){
+  this.name = studentName;
+  this.dob = studentDob;
+  this.section = studentSection;
+}
+const student1 = new Student("Geeta", "6-18-2003", "A2001");
+const student2 = new Student("Chakri", "09-05-1999", "B2001");
+// console.log(student2);
+
+Student.prototype.greet = function () {
+  console.log(`Hello ${this.name}`);
+};
+Student.prototype.getAge = function () {
+  const dob = new Date(this.dob);
+  const difference = Math.abs(new Date() - dob) / (1000 * 60 * 60 * 24);
+  return difference / 365;
+};
+
+student2.greet();
+console.log(`Your Age : ${Math.floor(student2.getAge())}`);
+student1.greet();
+console.log(`Your Age : ${Math.floor(student1.getAge())}`);
 

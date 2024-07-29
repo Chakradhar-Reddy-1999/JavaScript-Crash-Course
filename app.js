@@ -679,7 +679,7 @@ console.log(name); */
 ////////////     OOPS in JS     ////
 
 // constructor () function
-
+/*
 function Student(studentName, studentDob, studentSection){
   this.name = studentName;
   this.dob = studentDob;
@@ -702,4 +702,91 @@ student2.greet();
 console.log(`Your Age : ${Math.floor(student2.getAge())}`);
 student1.greet();
 console.log(`Your Age : ${Math.floor(student1.getAge())}`);
+*/
 
+// ES6 class syntax
+/*
+class Student {
+  constructor(studentName, studentDob, studentSection) {
+    this.name = studentName;
+    this.dob = studentDob;
+    this.section = studentSection;
+  }
+
+  greet() {
+    console.log(`Hello ${this.name}`);
+  }
+  getAge() {
+    const dob = new Date(this.dob);
+    const difference = Math.abs(new Date() - dob) / (1000 * 60 * 60 * 24);
+    return difference / 365;
+  }
+}
+
+const student1 = new Student("John", "3-4-1992", "A2001");
+const student2 = new Student("Aragorn", "7-4-1982", "B2001");
+console.log(student2);
+
+student2.greet();
+console.log(Math.floor(student1.getAge()));
+*/
+
+
+
+
+
+
+
+// Working with DOM //
+
+//document.getElementsByTagName("div")[0].innerText = "SFDCFacts";
+
+// getting DOM element
+
+// get by id
+//console.log(document.getElementById("name"));
+//console.log(document.getElementsByTagName("input"));
+//console.log(document.getElementsByClassName("form-element"));
+
+//document.getElementById("name").value = "John";
+//console.log(document.querySelectorAll("input"));
+
+/* const btn = document.querySelector("button");
+//btn.remove()
+btn.innerText = "Add New Student";
+btn.style.background = "green"; */
+
+/* const container = document.querySelector(".container");
+console.log(container.classList);
+container.classList.add("abcd");
+console.log(container.classList);
+container.classList.remove("container"); */
+
+/* const addStudent = (evt) => {
+  evt.preventDefault();
+  const btn = evt.target;
+  btn.innerText = "Clicked";
+}; */
+
+const btn = document.querySelector("button");
+btn.addEventListener("click", (evt) => {
+  evt.preventDefault();
+  const name = document.querySelector("#name").value;
+  const age = document.querySelector("#age").value;
+  const cls = document.querySelector("#class").value;
+
+  const stuList = document.querySelector(".student-list");
+  stuList.innerHTML += `
+  <div class="student-list-item">
+          <div class="student-name">${name}</div>
+          <div class="student-detail">
+            <div>Age: ${age}</div>
+            <div>Class: ${cls}</div>
+          </div>
+        </div>
+  `;
+
+  document.querySelectorAll("input").forEach((element) => {
+    element.value = "";
+  });
+});
